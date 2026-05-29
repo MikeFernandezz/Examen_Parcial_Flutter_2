@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../shared/widgets/header_card.dart';
 import '../../../registro/domain/models/registro_vehiculo_data.dart';
+import '../../../entrega/presentation/pages/entrega_page.dart';
 import '../../domain/models/prioridad_summary.dart';
 import '../../domain/models/urgencia.dart';
 import '../widgets/categoria_urgencia_card.dart';
@@ -268,6 +269,21 @@ class _MecanicoPageState extends State<MecanicoPage> {
                   ),
                 ),
               ],
+            ),
+            const SizedBox(height: 12),
+            SizedBox(
+              width: double.infinity,
+              child: FilledButton.icon(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => EntregaPage(registro: registro),
+                    ),
+                  );
+                },
+                icon: const Icon(Icons.assignment_turned_in),
+                label: const Text('Continuar a entrega'),
+              ),
             ),
           ],
         ),
